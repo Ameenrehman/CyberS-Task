@@ -19,6 +19,10 @@ provider "aws" {
 data "aws_iam_role" "ecs_task_execution_role" {
   name = "ecsTaskExecutionRole"
 }
+resource "aws_iam_role_policy_attachment" "ecr_pull_policy" {
+  role       = data.aws_iam_role.ecs_task_execution_role.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+}
 
 resource "aws_ecs_cluster" "main" {
   name = "my-fargate-cluster"
