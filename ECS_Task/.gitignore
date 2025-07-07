@@ -1,0 +1,4 @@
+react-frontend-app2/
+.github\workflows\aws.yaml\
+.github\workflows\spring-task-definition.yaml
+terraform\.terraform\
